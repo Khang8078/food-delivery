@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { assets } from '../../assets/assets'
 import './Add.css'
 import axios from "axios"
+import { toast } from 'react-toastify'
 const Add = () => {
     const url = "http://localhost:400";
     const [image, setImage] = useState(false);
@@ -37,6 +38,10 @@ const Add = () => {
                 category: "Salad"
             });
             setImage(false);
+            toast.success(response.data.message);
+        }
+        else{
+            toast.error(response.data.message);
         }
     } catch (error) {
         console.error("Error adding food item:", error);
