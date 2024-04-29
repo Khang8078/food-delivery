@@ -4,8 +4,8 @@ import { assets } from '../../assets/assets'
 import './Add.css'
 import axios from "axios"
 import { toast } from 'react-toastify'
-const Add = () => {
-    const url = "http://localhost:400";
+import PropTypes from 'prop-types';
+const Add = ({url}) => {
     const [image, setImage] = useState(false);
     const [data, setData] = useState({
         name:"",
@@ -102,3 +102,8 @@ const Add = () => {
 }
 
 export default Add
+
+Add.propTypes = {
+    url: PropTypes.string.isRequired, 
+    
+  };
