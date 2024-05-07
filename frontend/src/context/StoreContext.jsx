@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'; // Import PropTypes
 export const StoreContext = createContext(null);
 import axios from 'axios';
 
+//Updated
 const StoreContextProvider = (props) => {
 
         const [cartItems, setCartItems] = useState({});
@@ -58,7 +59,7 @@ const StoreContextProvider = (props) => {
                 if(localStorage.getItem("token")){
                     setToken(localStorage.getItem("token"));
                     await loadCartData(localStorage.getItem("token"));
-                    
+
                 }
             }
             loadData();
