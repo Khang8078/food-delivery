@@ -38,7 +38,7 @@ const MyOrders = () => {
                         <p>${order.amount}.00</p>
                         <p>Items: {order.items.length}</p>
                         <p><span dangerouslySetInnerHTML={{ __html: '&#x25cf;' }}></span><b>{order.status}</b></p>
-                        <button>Track Order</button>
+                        <button onClick={fetchOrders}>Track Order</button>
                     </div>
                 )
             })}
