@@ -7,6 +7,7 @@ import validator from "validator";
 
 // login user
 const loginUser = async (req,res) =>{
+    var bcrypt = require('bcryptjs');
     const {email, password} = req.body;
     try{
         const user = await userModel.findOne({email});
@@ -34,6 +35,7 @@ const createToken = (id) =>{
 
 // register user
 const registerUser = async (req,res) =>{
+    var bcrypt = require('bcryptjs');
     const {name, password,email} = req.body;
     try{
         // checking is user already registered
